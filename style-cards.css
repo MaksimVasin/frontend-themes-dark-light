@@ -1,0 +1,107 @@
+.cards-container {
+  display: flex;
+  width: 100%;
+  min-height: 30px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.cards__card_item::before {
+  content: '';
+  border-bottom: 15px solid #2b7a78;
+  border-right: 15px solid #2b7a78;
+  border-top: 15px solid #2b7a78;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+
+  position: absolute;
+  right: 0;
+  bottom: 0;
+
+  transform: perspective(600px) rotateY(0deg);
+  transition: transform .7s linear;
+}
+
+.cards__card_item::after {
+  content: '';
+  border-left: 15px solid #2b7a78;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  transform: perspective(600px) rotateY(0deg);
+  transition: transform .7s linear;
+}
+
+.cards__card_item {
+  position: relative;
+  width: 30%;
+  height: 300px;
+  /* background-color: blue; */
+}
+
+.cards__content {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  
+  width: calc(100% - 40px);
+  height: calc(100% - 40px);
+  backface-visibility: hidden;
+
+  transition: transform .6s linear;
+}
+
+.front {
+  background-color: #3AAFA9;
+  transform: perspective(600px) rotateY(0deg);
+}
+.back {
+  background-color: #FEFFFF;
+  transform: perspective(600px) rotateY(180deg);
+}
+
+.dark .front {
+  background-color: #0e171a;
+}
+
+.dark .back {
+  background-color: #3AAFA9;
+}
+
+.cards__card_item:hover > .front {
+  transform: perspective(600px) rotateY(-180deg);
+}
+.cards__card_item:hover > .back {
+  transform: perspective(600px) rotateY(0deg);
+}
+
+.cards__card_item:hover::after {
+  transform: perspective(600px) rotateY(180deg);
+}
+.cards__card_item:hover::before {
+  transform: perspective(600px) rotateY(180deg);
+}
+
+/* .cards__card_item--active .front {
+  transform: perspective(600px) rotateY(-180deg);
+}
+.cards__card_item--active .back {
+  transform: perspective(600px) rotateY(0deg);
+}
+.cards__card_item--active::after {
+  transform: perspective(600px) rotateY(180deg);
+}
+.cards__card_item--active::before {
+  transform: perspective(600px) rotateY(180deg);
+} */
+
+
+.cards__card_item:nth-child(3n) {
+  margin-bottom: 30px;
+}

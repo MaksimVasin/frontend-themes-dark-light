@@ -1,0 +1,156 @@
+body {
+  margin: 0;
+  width: 100%;
+  background-color: #FEFFFF;
+  position: relative;
+  z-index: 0;
+  box-sizing: border-box;
+}
+
+
+
+.dark {
+  background-color: #0e171a;
+}
+
+.main-container {
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  /* box-shadow: 0 0 5px 2px #ccc; */ /* 20px 0 20px -20px #ccc, -20px 0 20px -20px #ccc; */
+}
+
+.dark .main-container {
+  /* box-shadow: 0 0 5px 2px rgb(53, 65, 65); *//* , -20px 0 20px -20px rgb(53, 65, 65); */
+}
+
+.header {
+  height: 100px;
+  background-color: #2B7A78;
+}
+
+.main {
+  padding: 100px 40px 40px;
+  min-height: 200px;
+  background-color: #DEF2F1; /* #17252A */
+}
+
+.canvas {
+  width: 100%;
+  height: 120vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.header {
+  position: relative;
+}
+
+.btnMagic {
+  position: absolute;
+  left: 92%;
+  top: 128px;
+  transform: translate(-50%, 0);
+
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  width: 70px;
+  height: 40px;
+  background-color: #3AAFA9;
+
+  color: none;
+  font-size: 16px;
+
+  cursor: pointer;
+  transition: transform .3s linear;
+
+  position: relative;
+}
+
+.btnMagic::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  border-radius: 15px;
+  width: 30px;
+  height: 30px;
+  background-color: #2B7A78;
+
+  transition: left .2s linear;
+}
+
+/* .btnMagic:hover::after {
+  left: 35px
+} */
+
+.dark .btnMagic::after {
+  left: 35px;
+}
+
+/* .dark .btnMagic:hover::after {
+  left: 5px;
+} */
+
+
+
+
+
+
+.btnMagic:hover {
+  /* transform: scale(1.1) translate(-45%, 0); */
+  background-color: #1f333a;
+}
+
+.btnMagic:active {
+  background-color: #2B7A78;
+}
+
+.dark .btnMagic:hover {
+  background-color: #3AAFA9;
+}
+
+.dark .btnMagic:active {
+  background-color: #17252A;
+}
+
+.footer {
+  height: 100px;
+  background-color: #2B7A78;
+}
+
+
+
+.frontground {
+  height: 100%;
+  background-color: none;
+  width: 100%;
+  opacity: 1;
+  position: absolute;
+  z-index: -1;
+  transition: opacity .5s linear;
+}
+
+.frontground-none {
+  opacity: 0;
+}
+/* DARK */
+/* .dark .footer {
+  background-color: #164644;
+}
+
+.dark .header {
+  background-color: #164644;
+} */
+
+.dark .main {
+  background-color: #17252A;
+}
+
+.dark .btnMagic {
+  background-color: #0e171a;
+}
+
